@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #faf8ef;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 500px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #776e65;
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.score-container {
+    background-color: #bbada0;
+    padding: 15px 25px;
+    border-radius: 6px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+#score {
+    margin-left: 10px;
+}
+
+#game-board {
+    background-color: #bbada0;
+    padding: 15px;
+    margin: 20px auto;
+    border-radius: 8px;
+    position: relative;
+    width: 400px;
+    height: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.grid-cell {
+    width: 85px;
+    height: 85px;
+    background-color: rgba(238, 228, 218, 0.35);
+    border-radius: 5px;
+    position: absolute;
+}
+
+.tile {
+    width: 85px;
+    height: 85px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    transition: all 0.2s ease;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.new-tile {
+    animation: appear 0.2s ease-in-out;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Enhanced tile colors with gradients */
+.tile[data-value="2"] { background: linear-gradient(135deg, #eee4da 0%, #ede0c8 100%); color: #776e65; }
+.tile[data-value="4"] { background: linear-gradient(135deg, #ede0c8 0%, #f2b179 100%); color: #776e65; }
+.tile[data-value="8"] { background: linear-gradient(135deg, #f2b179 0%, #f59563 100%); color: white; }
+.tile[data-value="16"] { background: linear-gradient(135deg, #f59563 0%, #f67c5f 100%); color: white; }
+.tile[data-value="32"] { background: linear-gradient(135deg, #f67c5f 0%, #f65e3b 100%); color: white; }
+.tile[data-value="64"] { background: linear-gradient(135deg, #f65e3b 0%, #edcf72 100%); color: white; }
+.tile[data-value="128"] { background: linear-gradient(135deg, #edcf72 0%, #edcc61 100%); color: white; font-size: 24px; }
+.tile[data-value="256"] { background: linear-gradient(135deg, #edcc61 0%, #edc850 100%); color: white; font-size: 24px; }
+.tile[data-value="512"] { background: linear-gradient(135deg, #edc850 0%, #edc53f 100%); color: white; font-size: 24px; }
+.tile[data-value="1024"] { background: linear-gradient(135deg, #edc53f 0%, #edc22e 100%); color: white; font-size: 22px; }
+.tile[data-value="2048"] { background: linear-gradient(135deg, #edc22e 0%, #3c3a32 100%); color: white; font-size: 22px; }
+
+button {
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #8f7a66 0%, #7f6a56 100%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+} 
